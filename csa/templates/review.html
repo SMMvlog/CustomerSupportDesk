@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/" method="post">
+{% csrf_token %}
+<input type="radio" name="r" value="Satisfied">
+<label for="male" style="color:#ffeb3b";>Satisfied</label><br>
+<input type="radio" name="r" value="Un_satisfied">
+<label for="female" style="color:#ffeb3b";>Un_satisfied</label><br>
+
+<button class="btn1">Sumbit</button>
+</form>
+{% endblock body %}
+
+
+

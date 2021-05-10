@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-3">
+ <form action="" method="post">
+ {% csrf_token %}
+ <div class="input">
+ <label for="name">Name:</label>
+ <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
+ </div>
+ <div class="input">
+ <label for="mobile">Mobile:</label>
+ <input type="text" class="form-control" id="mobile"name="mobile" id="mobile" placeholder="Enter your mobile number" required>
+ </div>
+ <div class="input">
+ <label for="email">Email:</label>
+ <input type="email" class="form-control" id="email"name="email" id="email" placeholder="Enter your Email Id" required>
+ </div>
+ <div class="input">
+ <label for="queries">queries:</label>
+ <input type="text" class="form-control" id="queries"name="queries" id="queries" placeholder="Enter your query" required>
+ </div>
+ <button class="btn1">Send</button>
+ </form>
+ <a href="/"> <button class="btn1">Back to home</button> </a>  
+</div>
+</div>    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$(".btn1").click(function(){
+    let mobile = $("#mobile").val();
+     console.log(mobile);
+     if(mobile.length > 10)
+     {
+         alert("leass")
+         window.location = ('{% url 'query' %}')
+     }
+     if(mobile.length < 10)
+     {
+         alert("lol")
+     }
+
+});
+});
+</script>
+{% endblock body %}

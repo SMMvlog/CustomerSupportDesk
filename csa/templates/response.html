@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-3">
+ <form action="" method="post">
+ {% csrf_token %}
+ <div class="input">
+ <label for="name">Name:</label>
+ <input type="text" name="name" class="form-control" id="name" value="{{ enq.name }}" readonly>
+ </div>
+ <div class="input">
+ <label for="email">Email:</label>
+ <input type="email" name="email" class="form-control" id="email" value="{{ enq.email }}" readonly>
+ </div>
+ <div class="input">
+ <label for="queries">query:</label>
+ <input type="text" class="form-control" id="queries"name="queries" id="queries" value="{{ enq.queries }}" readonly>
+ </div>
+
+<div class="input">
+ <label for="resp">Response:</label>
+ <input type="text" class="form-control" id="resp"name="resp" id="resp"  placeholder="Enter your Response" required>
+ </div>
+
+ <button class="btn1">Send</button>
+ </form>
+ <a href="/"> <button class="btn1">Back to home</button> </a>  
+</div>
+</div>    
+{% endblock body %}
